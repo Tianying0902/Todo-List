@@ -1,0 +1,32 @@
+.inputContent {
+    height: 2.5rem;
+    width: 60%;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.inputContent:hover {
+    background-color: yellow;
+}
+#inputBox {
+    height: 100%;
+    flex:1;
+    padding: 0;
+   border-width: 0;
+    margin: 0;
+    text-align: center;
+    border-style: none;
+}
+#inputBox:focus {
+    outline:none;
+}
+/* .inputBox:hover {
+    /* 没有生效整体的效果 */
+    /* background-color: yellow; */
+/* } */ 
+img {
+    margin-right: 0.5rem;
+}

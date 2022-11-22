@@ -5,11 +5,19 @@ import React from "react";
 import { useState } from "react";
 const Todo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [tasks, setTasks] = useState([]);
   const addTask = (event) => {
-    if (event.keyCode !== 13) {
-      return;
+    if (event.keyCode === 13) {
+      const content = document.getElementById("inputBox");
+      if (!content.value) {
+        alert("Please enter your task!");
+      }
+      if (content.value) {
+        const newTask = { text: `${content.value}`, completed: true };
+        setTasks([newTask, ...tasks]);
+        content.value = "";
+      }
     }
-    console.log(document.getElementById("inputBox").value);
   };
   return (
     <div className="inputContent">
