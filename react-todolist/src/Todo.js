@@ -1,9 +1,27 @@
-import "./todo.css";
+import "./style.css/todo.css";
+import React from "react";
+// import ad from "./assets/ad.png";
+// import au from "./assets/au.png";
+import { useState } from "react";
 const Todo = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const addTask = (event) => {
+    if (event.keyCode !== 13) {
+      return;
+    }
+    console.log(document.getElementById("inputBox").value);
+  };
   return (
     <div className="inputContent">
-      <img src="react-todolist/src/assets/au.png" alt="arrow-up" />
-      <input placeholder="what's next" />
+      <img
+        // src="./assets/au.png"
+        src={isOpen ? "./assets/ad.png" : "./assets/au.png"}
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+        alt="arrow-up"
+      />
+      <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
     </div>
   );
 };

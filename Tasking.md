@@ -9,5 +9,5 @@
 
 - [✅]Content:arrow img
 - [✅]Content:input
-- [ ]Content:style
+- [✅]Content:style
   [flex/center/margin/padding]
