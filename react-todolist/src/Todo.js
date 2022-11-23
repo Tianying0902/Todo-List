@@ -3,9 +3,6 @@ import React from "react";
 import List from "./List";
 import { useState, useEffect } from "react";
 
-// import ad from "./assets/ad.png";
-// import au from "./assets/au.png";
-
 const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -19,7 +16,12 @@ const Todo = (props) => {
   };
   const markItem = (id) => {
     const newTasks = [...tasks];
-    newTasks[id - 1].completed = !newTasks[id - 1].completed;
+    const result = newTasks.filter((task) => task.id === id);
+    let element;
+    for (let index = 0; index < result.length; index++) {
+      element = result[index];
+    }
+    element.completed = !element.completed;
     setTasks(newTasks);
     console.log(tasks);
   };
@@ -55,14 +57,6 @@ const Todo = (props) => {
         <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
       </div>
       <List lists={tasks} removeItem={removeItem} markItem={markItem} />
-      {/* <div className="list">
-        {tasks.map((task, index) => (
-          <li key={index} className="task">
-            {task.text}
-            <span>X</span>
-          </li>
-        ))}
-      </div> */}
     </div>
   );
 };
