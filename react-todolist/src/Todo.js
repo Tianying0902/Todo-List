@@ -17,19 +17,25 @@ const Todo = (props) => {
     tasks.splice(result, 1);
     setTasks([...tasks]);
   };
+  const markItem = (completed) => {
+    const mark = tasks.findIndex((task) => (task.completed = false));
+    console.log(mark);
+  };
   const addTask = (event) => {
     if (event.keyCode === 13) {
       const content = document.getElementById("inputBox");
       if (!content.value) {
         alert("Please enter your task!");
       }
-      const newTask = {
-        id: tasks.length === 0 ? 1 : tasks[0].id + 1,
-        text: `${content.value}`,
-        completed: true,
-      };
-      setTasks([newTask, ...tasks]);
-      content.value = "";
+      if (content.value) {
+        const newTask = {
+          id: tasks.length === 0 ? 1 : tasks[0].id + 1,
+          text: `${content.value}`,
+          completed: false,
+        };
+        setTasks([newTask, ...tasks]);
+        content.value = "";
+      }
     }
   };
 
