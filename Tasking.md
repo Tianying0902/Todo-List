@@ -18,6 +18,7 @@
 - [✅]get keycode when key down
 - [✅]if content is empty show warning
 - [✅]put new task into array
+- [✅]then clear the input
 
 ### Task 4 create component List
 
