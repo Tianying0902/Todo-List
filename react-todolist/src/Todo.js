@@ -17,9 +17,11 @@ const Todo = (props) => {
     tasks.splice(result, 1);
     setTasks([...tasks]);
   };
-  const markItem = (completed) => {
-    const mark = tasks.findIndex((task) => (task.completed = false));
-    console.log(mark);
+  const markItem = (id) => {
+    const newTasks = [...tasks];
+    newTasks[id - 1].completed = !newTasks[id - 1].completed;
+    setTasks(newTasks);
+    console.log(tasks);
   };
   const addTask = (event) => {
     if (event.keyCode === 13) {
@@ -52,7 +54,7 @@ const Todo = (props) => {
         />
         <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
       </div>
-      <List lists={tasks} removeItem={removeItem} />
+      <List lists={tasks} removeItem={removeItem} markItem={markItem} />
       {/* <div className="list">
         {tasks.map((task, index) => (
           <li key={index} className="task">

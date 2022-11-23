@@ -26,3 +26,18 @@
 - [✅]use array as props
 
 ### Task 5 create component Item
+
+- [✅]get props about id and text from List
+
+### Task 6 removeItem
+
+- [✅]add new function removeItem
+- [✅]send id from Item to List to Todo
+- [✅]refresh tasks
+
+### Task 7 mark/unmark task
+
+- [✅]add new function markItem
+- [✅]click to change item.completed status
+- [✅]send id from Item to List to Todo
+- [✅]refresh original tasks
