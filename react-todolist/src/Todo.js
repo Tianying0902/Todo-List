@@ -46,7 +46,7 @@ const Todo = (props) => {
         />
         <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
       </div>
-      <List lists={tasks} />
+      <List lists={tasks} removeItem={removeItem} />
       {/* <div className="list">
         {tasks.map((task, index) => (
           <li key={index} className="task">
