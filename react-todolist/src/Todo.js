@@ -1,6 +1,8 @@
 import "./style.css/Todo.css";
 import React from "react";
 import List from "./List";
+import au from "./assets/au.png";
+import ad from "./assets/ad.png";
 import { useState, useEffect } from "react";
 
 const Todo = (props) => {
