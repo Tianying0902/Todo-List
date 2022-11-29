@@ -39,7 +39,10 @@ const Todo = (props) => {
           text: `${content.value}`,
           completed: false,
         };
-        setTasks([newTask, ...tasks]);
+        // setTasks([newTask, ...tasks]);
+        setTasks((tasks) => {
+          return [newTask, ...tasks];
+        });
         content.value = "";
       }
     }
@@ -50,7 +53,7 @@ const Todo = (props) => {
       <div className="inputContent">
         <img
           // src="./assets/au.png"
-          src={isOpen ? "./assets/ad.png" : "./assets/au.png"}
+          src={isOpen ? au : ad}
           onClick={() => {
             setIsOpen(!isOpen);
           }}
