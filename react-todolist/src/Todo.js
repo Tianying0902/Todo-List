@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
     console.log(tasks);
   });
@@ -64,11 +65,26 @@ const Todo = (props) => {
     }
   };
 
+  const removeCompletedTask = () => {
+    const newTasks = [...tasks];
+    const rest = newTasks.filter((item) => item.completed === false);
+    setTasks([...rest]);
+  };
+  const showCompleted = () => {
+    const newTasks = [...tasks];
+    const rest = newTasks.filter((item) => item.completed === true);
+    setTasks([...rest]);
+  };
+  const showActive = () => {
+    const newTasks = [...tasks];
+    const rest = newTasks.filter((item) => item.completed === false);
+    setTasks([...rest]);
+  };
+
   return (
     <div className="bigBox">
       <div className="inputContent">
         <img
-          // src="./assets/au.png"
           src={isOpen ? au : ad}
           onClick={() => {
             setIsOpen(!isOpen);
