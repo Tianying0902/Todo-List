@@ -30,3 +30,26 @@ img {
     width: 1.5rem;
     margin-left: 1rem;
 }
+
+.filterMachine {
+    color: gray;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    margin: 0 auto;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.left-item {
+    padding-left: 0.5rem;
+}
+.clear{
+    padding-right: 0.5rem;
+}
+.clear:focus {
+    cursor: pointer;
+}
+.clear:hover {
+    color:red;
+}

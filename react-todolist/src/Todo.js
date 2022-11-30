@@ -84,7 +84,21 @@ const Todo = (props) => {
         editItem={editItem}
       />
       <div className="filterMachine"></div>
-      {/* <div className="filterMachine"></div> */}
+      <div className="filterMachine">
+        <div className="left-item"> {tasks.length} item left</div>
+        <div className="type-filter">
+          <span className="all">All</span>
+          <span className="active" onClick={showActive}>
+            Active
+          </span>
+          <span className="completed" onClick={showCompleted}>
+            completed
+          </span>
+        </div>
+        <div className="clear" onClick={removeCompletedTask}>
+          clear completed
+        </div>
+      </div>
     </div>
   );
 };
