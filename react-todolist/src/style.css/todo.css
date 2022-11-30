@@ -25,10 +25,8 @@
 #inputBox:focus {
     outline:none;
 }
-/* .inputBox:hover {
-    /* 没有生效整体的效果 */
-    /* background-color: yellow; */
-/* } */ 
+
 img {
-    margin-right: 0.5rem;
+    width: 1.5rem;
+    margin-left: 1rem;
 }

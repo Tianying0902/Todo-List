@@ -27,6 +27,22 @@ const Todo = (props) => {
     setTasks(newTasks);
     console.log(tasks);
   };
+  const editItem = (id, value) => {
+    const newTasks = [...tasks];
+    const result = newTasks.filter((task) => task.id === id);
+    let element;
+    for (let index = 0; index < result.length; index++) {
+      element = result[index];
+    }
+    if (!value) {
+      alert("please enter your task");
+    }
+    if (value) {
+      element.text = value;
+      setTasks(newTasks);
+    }
+    console.log(tasks);
+  };
   const addTask = (event) => {
     if (event.keyCode === 13) {
       const content = document.getElementById("inputBox");
@@ -57,11 +73,17 @@ const Todo = (props) => {
           onClick={() => {
             setIsOpen(!isOpen);
           }}
-          alt="arrow-up"
+          alt={isOpen ? "arrow-up" : "arrow-down"}
         />
         <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
       </div>
-      <List lists={tasks} removeItem={removeItem} markItem={markItem} />
+      <List
+        lists={tasks}
+        removeItem={removeItem}
+        markItem={markItem}
+        editItem={editItem}
+      />
+      <div className="filterMachine"></div>
     </div>
   );
 };
