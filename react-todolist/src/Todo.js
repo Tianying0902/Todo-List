@@ -84,6 +84,7 @@ const Todo = (props) => {
         editItem={editItem}
       />
       <div className="filterMachine"></div>
+      {/* <div className="filterMachine"></div> */}
     </div>
   );
 };
