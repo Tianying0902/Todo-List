@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
-
+  const [type, setType] = useState(0);
   useEffect(() => {
     console.log(tasks);
   });
@@ -71,14 +71,10 @@ const Todo = (props) => {
     setTasks([...rest]);
   };
   const showCompleted = () => {
-    const newTasks = [...tasks];
-    const rest = newTasks.filter((item) => item.completed === true);
-    setTasks([...rest]);
+    setType(1);
   };
   const showActive = () => {
-    const newTasks = [...tasks];
-    const rest = newTasks.filter((item) => item.completed === false);
-    setTasks([...rest]);
+    setType(2);
   };
 
   return (
