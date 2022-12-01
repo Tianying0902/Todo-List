@@ -89,12 +89,30 @@ const Todo = (props) => {
         />
         <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
       </div>
-      <List
-        lists={tasks}
-        removeItem={removeItem}
-        markItem={markItem}
-        editItem={editItem}
-      />
+      {!isOpen ? (
+        type === 0 ? (
+          <List
+            lists={tasks}
+            removeItem={removeItem}
+            markItem={markItem}
+            editItem={editItem}
+          />
+        ) : type === 1 ? (
+          <List
+            lists={tasks.filter((task) => task.completed === true)}
+            removeItem={removeItem}
+            markItem={markItem}
+            editItem={editItem}
+          />
+        ) : (
+          <List
+            lists={tasks.filter((task) => task.completed === false)}
+            removeItem={removeItem}
+            markItem={markItem}
+            editItem={editItem}
+          />
+        )
+      ) : null}
       <div className="filterMachine"></div>
       <div className="filterMachine">
         <div className="left-item"> {tasks.length} item left</div>
