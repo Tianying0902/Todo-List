@@ -11,12 +11,16 @@ const List = (props) => {
   const markItem = (id) => {
     props.markItem(id);
   };
+  const resetItem = (id) => {
+    props.resetItem(id);
+  };
   const items = props.lists.map((task) => (
     <Item
       key={task.id}
       className="task"
       text={task.text}
       markItem={markItem}
+      resetItem={resetItem}
       removeItem={removeItem}
       editItem={editItem}
       id={task.id}

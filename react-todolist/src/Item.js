@@ -13,6 +13,11 @@ const Item = (props) => {
     console.log(status);
     props.markItem(props.id);
   };
+  const resetItem = () => {
+    setStatus(!status);
+    console.log(status);
+    props.resetItem(props.id);
+  };
   const removeItem = () => {
     props.removeItem(props.id);
   };
