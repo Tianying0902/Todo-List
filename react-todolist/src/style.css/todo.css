@@ -44,12 +44,12 @@ img {
 .left-item {
     padding-left: 0.5rem;
 }
+
 .clear{
     padding-right: 0.5rem;
 }
-.clear:focus {
-    cursor: pointer;
-}
+
 .clear:hover {
+    cursor: pointer;
     color:red;
 }
