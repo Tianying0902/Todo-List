@@ -56,7 +56,6 @@ const Todo = (props) => {
           text: `${content.value}`,
           completed: false,
         };
-        // setTasks([newTask, ...tasks]);
         setTasks((tasks) => {
           return [newTask, ...tasks];
         });
@@ -122,7 +121,7 @@ const Todo = (props) => {
             Active
           </span>
           <span className="completed" onClick={showCompleted}>
-            completed
+            Completed
           </span>
         </div>
         <div className="clear" onClick={removeCompletedTask}>

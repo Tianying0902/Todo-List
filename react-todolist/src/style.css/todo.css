@@ -1,6 +1,5 @@
 
 .inputContent {
-
     height: 2.5rem;
     width: 60%;
     margin: 0 auto;
@@ -24,6 +23,9 @@
 }
 #inputBox:focus {
     outline:none;
+}
+#inputBox:hover {
+    background-color: yellow;
 }
 
 img {
