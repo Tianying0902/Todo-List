@@ -32,7 +32,13 @@ const Item = (props) => {
   };
   return content ? (
     <li className="task" onDoubleClick={changeContent}>
-      <input className="check-input" type="checkbox" onClick={markItem} />
+      <input
+        className="check-input"
+        type="checkbox"
+        onClick={markItem}
+        onDoubleClick={resetItem}
+        defaultChecked={status}
+      />
       <p
         className="content"
         style={{ textDecoration: status ? "Line-through" : "" }}
