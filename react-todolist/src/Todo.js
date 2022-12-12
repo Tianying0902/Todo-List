@@ -47,7 +47,7 @@ const Todo = (props) => {
   const addTask = (event) => {
     if (event.keyCode === 13) {
       const content = document.getElementById("inputBox");
-      if (!content.value) {
+      if (!content.value.trim()) {
         alert("Please enter your task!");
       }
       if (content.value) {
