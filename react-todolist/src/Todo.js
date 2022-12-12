@@ -75,6 +75,9 @@ const Todo = (props) => {
   const showActive = () => {
     setType(2);
   };
+  const showAll = () => {
+    setType(0);
+  };
 
   return (
     <div className="bigBox">
