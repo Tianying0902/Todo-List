@@ -89,7 +89,12 @@ const Todo = (props) => {
           }}
           alt={isOpen ? "arrow-up" : "arrow-down"}
         />
-        <input id="inputBox" placeholder="what's next" onKeyDown={addTask} />
+        <input
+          className="input-box"
+          id="inputBox"
+          placeholder="what's next"
+          onKeyDown={addTask}
+        />
       </div>
       {!isOpen ? (
         type === 0 ? (
