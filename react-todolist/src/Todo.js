@@ -124,7 +124,9 @@ const Todo = (props) => {
       <div className="filterMachine">
         <div className="left-item"> {tasks.length} item left</div>
         <div className="type-filter">
-          <span className="all">All</span>
+          <span className="all" onClick={showAll}>
+            All
+          </span>
           <span className="active" onClick={showActive}>
             Active
           </span>

@@ -1,5 +1,6 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
+import userEvent, { useEvent } from "@testing-library/user-event";
 import Todo from "./Todo";
 test("render clear completed", () => {
   //Arrange:prepare input value
@@ -22,5 +23,15 @@ test("render input", () => {
   //Act:render a React Component to the DOM
   render(<Todo />);
   //Assertion:using query to make assertion
-  expect(screen.getByText("what's next")).toBeInTheDocument();
+  expect(screen.getByPlaceholderText("what's next")).toHaveClass("input-box");
+});
+test("clear input", async () => {
+  //Arrange:prepare input value
+  //Act:render a React Component to the DOM
+  jest.spyOn(window, "alert").mockImplementation(() => {});
+  render(<Todo />);
+  await userEvent.type(screen.getByRole("textbox"), " ");
+  await userEvent.keyboard("{Enter}");
+  //Assertion:using query to make assertion
+  expect(window.alert).toBeCalled();
 });
