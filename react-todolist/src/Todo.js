@@ -120,7 +120,7 @@ const Todo = (props) => {
           />
         )
       ) : null}
-      <div className="filterMachine"></div>
+
       <div className="filterMachine">
         <div className="left-item"> {tasks.length} item left</div>
         <div className="type-filter">

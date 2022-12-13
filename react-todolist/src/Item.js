@@ -5,10 +5,12 @@ import { useState } from "react";
 const Item = (props) => {
   const [status, setStatus] = useState(props.status);
   const [content, setContent] = useState(true);
+  const [visible, setVisible] = useState(false);
   const changeContent = () => {
     setContent(!content);
   };
   const markItem = () => {
+    setVisible(!visible);
     setStatus(!status);
     console.log(status);
     props.markItem(props.id);
@@ -32,20 +34,34 @@ const Item = (props) => {
   };
   return content ? (
     <li className="task" onDoubleClick={changeContent}>
-      <input
-        className="check-input"
-        type="checkbox"
-        onClick={markItem}
-        onDoubleClick={resetItem}
-        defaultChecked={status}
-      />
+      {visible ? (
+        <span
+          className="check-input"
+          type="checkbox"
+          onClick={markItem}
+          onDoubleClick={resetItem}
+          defaultChecked={status}
+        >
+          ✓
+        </span>
+      ) : (
+        <span
+          className="check-input"
+          type="checkbox"
+          onClick={markItem}
+          onDoubleClick={resetItem}
+          defaultChecked={status}
+        ></span>
+      )}
       <p
         className="content"
         style={{ textDecoration: status ? "Line-through" : "" }}
       >
         {props.text}
       </p>
-      <span onClick={removeItem}>X</span>
+      <span onClick={removeItem} className="delete">
+        ×
+      </span>
     </li>
   ) : (
     <li className="task" onDoubleClick={changeContent}>
@@ -56,7 +72,7 @@ const Item = (props) => {
         placeholder={props.text}
         onKeyDown={editItem}
       />
-      <span onClick={removeItem}>X</span>
+      <span onClick={removeItem}>✕</span>
     </li>
   );
 };

@@ -10,8 +10,9 @@
     display: flex;
 }
 .inputContent:hover {
-    background-color: yellow;
+    background-color: #F2F2F2;
 }
+
 #inputBox {
     height: 100%;
     flex:1;
@@ -25,7 +26,7 @@
     outline:none;
 }
 #inputBox:hover {
-    background-color: yellow;
+    background-color:#F2F2F2;
 }
 
 img {
@@ -36,12 +37,15 @@ img {
 .filterMachine {
     color: gray;
     justify-content: space-between;
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin: 0 auto;
     width: 60%;
     background-color: white;
     display: flex;
     align-items: center;
+    border-top: 1px solid lightgray;
+
 }
 .left-item {
     padding-left: 0.5rem;
@@ -54,4 +58,11 @@ img {
 .clear:hover {
     cursor: pointer;
     color:red;
+}
+.filterMachine{
+ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgba(0, 0, 0, 0.2),
+    0 16px 0 -6px #f6f6f6,
+    0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
