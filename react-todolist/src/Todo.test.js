@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import userEvent, { useEvent } from "@testing-library/user-event";
 import Todo from "./Todo";
 test("render clear completed", () => {
   //Arrange:prepare input value
