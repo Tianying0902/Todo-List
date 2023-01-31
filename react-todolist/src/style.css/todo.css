@@ -59,6 +59,18 @@ img {
     cursor: pointer;
     color:red;
 }
+.all:hover {
+    cursor: pointer;
+    color:red;
+}
+.active:hover {
+    cursor: pointer;
+    color:red;
+}
+.completed:hover {
+    cursor: pointer;
+    color:red;
+}
 .filterMachine{
  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
     0 8px 0 -3px #f6f6f6,

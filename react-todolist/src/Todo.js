@@ -9,9 +9,9 @@ const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [type, setType] = useState(0);
-  useEffect(() => {
-    console.log(tasks);
-  });
+  // useEffect(() => {
+  //   console.log(tasks);
+  // });
   const removeItem = (id) => {
     const result = tasks.findIndex((task) => task.id === id);
     tasks.splice(result, 1);

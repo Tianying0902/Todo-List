@@ -10,8 +10,13 @@ const Item = (props) => {
     setContent(!content);
   };
   const markItem = () => {
-    setVisible(!visible);
     setStatus(!status);
+    setVisible(!visible);
+    // if (status === true) {
+    //   setVisible(true);
+    // } else {
+    //   setVisible(false);
+    // }
     console.log(status);
     props.markItem(props.id);
   };
