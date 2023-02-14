@@ -12,28 +12,19 @@ const Item = (props) => {
   const markItem = () => {
     setStatus(!status);
     setVisible(!visible);
-    // if (status === true) {
-    //   setVisible(true);
-    // } else {
-    //   setVisible(false);
-    // }
-    console.log(status);
     props.markItem(props.id);
   };
   const resetItem = () => {
     setStatus(!status);
-    console.log(status);
     props.resetItem(props.id);
   };
   const removeItem = () => {
     props.removeItem(props.id);
   };
   const editItem = (event) => {
-    // props.editItem(props.id);
     if (event.keyCode === 13) {
       setContent(!content);
       let value = document.getElementById(props.id).value;
-      console.log(value);
       props.editItem(props.id, value);
     }
   };
