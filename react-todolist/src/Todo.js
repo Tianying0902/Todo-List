@@ -10,9 +10,7 @@ const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [type, setType] = useState(0);
-  // useEffect(() => {
-  //   console.log(tasks);
-  // });
+
   const removeItem = (id) => {
     const result = tasks.findIndex((task) => task.id === id);
     tasks.splice(result, 1);
@@ -27,7 +25,6 @@ const Todo = (props) => {
     }
     element.completed = !element.completed;
     setTasks(newTasks);
-    console.log(tasks);
   };
   const editItem = (id, value) => {
     const newTasks = [...tasks];
@@ -43,7 +40,6 @@ const Todo = (props) => {
       element.text = value;
       setTasks(newTasks);
     }
-    console.log(tasks);
   };
   const addTask = (event) => {
     if (event.keyCode === 13) {
