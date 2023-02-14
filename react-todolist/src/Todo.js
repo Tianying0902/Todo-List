@@ -1,9 +1,10 @@
 import "./style.css/Todo.css";
 import React from "react";
-import List from "./List";
+import Header from "./components/Header";
+import List from "./components/List";
 import au from "./assets/au.png";
 import ad from "./assets/ad.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Todo = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,6 +82,7 @@ const Todo = (props) => {
 
   return (
     <div className="bigBox">
+      <Header />
       <div className="inputContent">
         <img
           src={isOpen ? au : ad}
